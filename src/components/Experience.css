@@ -1,0 +1,112 @@
+/* Experience.css */
+
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* Vertical line */
+.timeline-line {
+  position: absolute;
+  left: 18px;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border2);
+}
+
+.exp-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+/* Circle dot on timeline */
+.exp-dot {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  z-index: 1; /* sit above the line */
+}
+
+/* Card */
+.exp-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  flex: 1;
+  transition: border-color 0.2s;
+}
+
+.exp-card:hover {
+  border-color: var(--border2);
+}
+
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.exp-title {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.exp-period {
+  font-size: 0.78rem;
+  color: var(--accent);
+  background: rgba(79,142,255,0.08);
+  border: 1px solid rgba(79,142,255,0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.exp-company {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* Bullet list */
+.exp-bullets {
+  list-style: none;
+}
+
+.exp-bullets li {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.7;
+  padding: 0.2rem 0 0.2rem 1.25rem;
+  position: relative;
+}
+
+/* Custom bullet arrow */
+.exp-bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  top: 0.35rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .timeline-line { display: none; }
+  .exp-item { flex-direction: column; gap: 0.75rem; }
+  .exp-dot   { display: none; }
+}
